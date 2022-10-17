@@ -13,15 +13,10 @@ int main()
 {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "你好世界");
     SetTargetFPS(144);
+    
+    Camera3D camera = initMyCamera();
+    Model cube = initMyCube();
 
-    Image img = LoadImage(ASSETS_PATH"test.png");
-    
-    Camera3D camera;
-    initCamera(camera);
-
-    
-    Model cube = LoadModelFromMesh(GenMeshCube(0.2f, 0.2f, 0.2f));
-    
     while (!WindowShouldClose())
     {
         UpdateCamera(&camera);

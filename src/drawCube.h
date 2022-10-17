@@ -1,13 +1,20 @@
 #include "raylib.h"
 #include "raymath.h"
 
-void initCamera(Camera3D& camera){
+Camera3D initMyCamera(){
+    Camera3D camera;
     camera.position = { 10.f, 3.f, 10.f }; // position
     camera.target = { 0.0f, 0.5f, 0.0f }; // target
     camera.up = { 0.0f, 1.0f, 0.0f }; // up vector
     camera.fovy = 60.0f; // fovy
     camera.type = CAMERA_PERSPECTIVE; // type
+    return camera;
 }
+
+Model initMyCube(){
+    Model cube = LoadModelFromMesh(GenMeshCube(0.2f, 0.2f, 0.2f));
+    return cube;
+}   
 
 
 void drawGridCudes(int row, int column, Model& cube){
